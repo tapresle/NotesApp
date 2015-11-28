@@ -17,6 +17,10 @@ notesApp.controller('notesCtrl', function ($scope, notesService) {
       self.showErrorMessage = true;
       console.log('Sorry, you need to use a modern browser to view this website.')
     }
+    
+    if (/Mobi/.test(navigator.userAgent)) {
+      self.deleteShown = true;
+    }
   }
   
   function addNote() {

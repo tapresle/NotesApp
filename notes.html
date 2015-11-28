@@ -1,0 +1,30 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <span class="navbar-brand">Notes</span>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ul class="list-group">
+  <li class="list-group-item note" ng-repeat="note in notes.notes track by $index">
+    <span>{{ note }}</span>
+    <span class="glyphicon glyphicon-remove pull-right" ng-class="note.showDelete" ng-click="notes.deleteNote($index)"></span>
+  </li>
+  <li class="list-group-item">
+    <form ng-submit="notes.addNote()">
+      <div class="input-group">
+        <input type="text" class="form-control" ng-model="notes.newNote">
+        <span class="input-group-btn">
+          <button class="btn btn-success" type="button" ng-click="notes.addNote()" ng-disabled="notes.newNote.length === 0">Add Note</button>
+        </span>
+      </div>
+    </form>
+  </li>
+</ul>
+
+<div class="error" ng-show="notes.showErrorMessage">Sorry, you need to use a modern browser to use this website.</div>

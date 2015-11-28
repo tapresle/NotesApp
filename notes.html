@@ -13,7 +13,7 @@
 <ul class="list-group">
   <li class="list-group-item note" ng-repeat="note in notes.notes track by $index">
     <span>{{ note }}</span>
-    <span class="glyphicon glyphicon-remove pull-right" ng-class="note.showDelete" ng-click="notes.deleteNote($index)"></span>
+    <span class="glyphicon glyphicon-remove pull-right" ng-click="notes.deleteNote($index)"></span>
   </li>
   <li class="list-group-item">
     <form ng-submit="notes.addNote()">

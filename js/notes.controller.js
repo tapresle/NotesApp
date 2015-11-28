@@ -7,8 +7,6 @@ notesApp.controller('notesCtrl', function ($scope, notesService) {
   self.newNote = '';
   self.addNote = addNote;
   self.deleteNote = deleteNote;
-  self.showDelete = showDelete;
-  self.hideDelete = hideDelete;
   
   activate();
   
@@ -16,10 +14,6 @@ notesApp.controller('notesCtrl', function ($scope, notesService) {
     if(localStorage === 'undefined') {
       self.showErrorMessage = true;
       console.log('Sorry, you need to use a modern browser to view this website.')
-    }
-    
-    if (/Mobi/.test(navigator.userAgent)) {
-      self.deleteShown = true;
     }
   }
   
@@ -30,13 +24,5 @@ notesApp.controller('notesCtrl', function ($scope, notesService) {
   
   function deleteNote($index) {
     self.notes = notesService.delete($index);
-  }
-  
-  function showDelete() {
-    self.deleteShown = true;
-  }
-  
-  function hideDelete() {
-    self.deleteShown = false;
   }
 })

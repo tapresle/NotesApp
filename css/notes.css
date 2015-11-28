@@ -2,11 +2,6 @@
   color: firebrick;
   font-size: 20px;
   cursor: pointer;
-  display: none;
-}
-
-.note:hover .glyphicon-remove {
-  display: block;
 }
 
 body {
